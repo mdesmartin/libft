@@ -1,4 +1,4 @@
-# ft_libft
+# Libft
 
 ft_libft is a custom C library created as part of the 42 school curriculum. The library provides a comprehensive set of functions that replicate and extend the functionality of standard C library functions. It serves as a fundamental building block for future programming projects, offering a wide range of utility functions that assist in various tasks.
 
