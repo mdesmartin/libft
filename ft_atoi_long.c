@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_long.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvogel <mvogel@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: mdesmart <mdesmart@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 16:27:17 by mvogel            #+#    #+#             */
-/*   Updated: 2023/03/21 14:03:11 by mvogel           ###   ########lyon.fr   */
+/*   Created: 2023/01/23 13:51:19 by mvogel            #+#    #+#             */
+/*   Updated: 2023/05/30 12:34:54 by mdesmart         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long int	ft_atoi_long(const char *str)
 {
 	long	i;
 	long	res;

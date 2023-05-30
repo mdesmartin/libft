@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvogel <mvogel@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 15:51:40 by mvogel            #+#    #+#             */
-/*   Updated: 2023/03/21 14:04:18 by mvogel           ###   ########lyon.fr   */
+/*   Created: 2023/03/19 20:56:43 by mehdidesmar       #+#    #+#             */
+/*   Updated: 2023/03/21 14:00:14 by mvogel           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	*ft_realloc(void *ptr, size_t size)
 {
-	t_list	*current;
-	t_list	*nxt;
+	void	*new_ptr;
+	size_t	old_size;
 
-	if (!del || !lst || !*lst)
-		return ;
-	if (lst)
+	new_ptr = NULL;
+	old_size = 0;
+	if (ptr == NULL)
 	{
-		current = *lst;
-		while (current)
-		{
-			nxt = current->next;
-			ft_lstdelone(current, (del));
-			current = nxt;
-		}
-		*lst = NULL;
+		new_ptr = ft_calloc(1, size);
+		return (new_ptr);
 	}
+	if (size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+	old_size = ft_strlen(ptr);
+	if (size <= old_size)
+		return (ptr);
+	new_ptr = ft_calloc(1, size);
+	if (new_ptr == NULL)
+		return (NULL);
+	ft_memcpy(new_ptr, ptr, old_size);
+	free(ptr);
+	return (new_ptr);
 }

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvogel <mvogel@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/21 15:51:40 by mvogel            #+#    #+#             */
-/*   Updated: 2023/03/21 14:04:18 by mvogel           ###   ########lyon.fr   */
+/*   Created: 2023/02/08 15:49:56 by mvogel            #+#    #+#             */
+/*   Updated: 2023/02/08 15:56:07 by mvogel           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	*ft_free_tab(char **tab)
 {
-	t_list	*current;
-	t_list	*nxt;
+	int	i;
 
-	if (!del || !lst || !*lst)
-		return ;
-	if (lst)
+	i = 0;
+	while (tab[i] != NULL)
 	{
-		current = *lst;
-		while (current)
-		{
-			nxt = current->next;
-			ft_lstdelone(current, (del));
-			current = nxt;
-		}
-		*lst = NULL;
+		free(tab[i]);
+		i++;
 	}
+	free(tab);
+	return (NULL);
 }

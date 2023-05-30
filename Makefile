@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mvogel <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: mvogel <mvogel@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/17 13:20:33 by mvogel            #+#    #+#              #
-#    Updated: 2022/11/17 17:08:42 by mvogel           ###   ########lyon.fr    #
+#    Updated: 2023/03/21 13:52:34 by mvogel           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = rc
 
 SRC = ft_atoi.c \
+	ft_atoi_long.c \
 	ft_isalpha.c \
 	ft_isprint.c \
     ft_memcpy.c \
@@ -54,35 +55,33 @@ SRC = ft_atoi.c \
     ft_putstr_fd.c \
     ft_putendl_fd.c \
     ft_putnbr_fd.c \
-
-SRC_BONUS = ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
+	ft_printf.c \
+	ft_printf_utils.c \
+	get_next_line.c \
+	ft_free_tab.c \
+	ft_realloc.c
 
 OBJ = $(SRC:.c=.o)
-
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(OBJ_BONUS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ) $(OBJ_BONUS)
-
 %.o: %.c Makefile $(HEADER)
-	$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	$(RM) $(OBJ)
-	$(RM) $(OBJ_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -90,4 +89,4 @@ fclean: clean
 re: fclean
 	$(MAKE) all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
