@@ -12,6 +12,6 @@ The primary objective of ft_libft is to deepen your understanding of data struct
 - Linked list operations: The library includes functions to create, modify, and traverse linked lists, allowing you to work with dynamic data structures efficiently.
 - Additional utilities: ft_libft also provides various additional functions, such as mathematical operations, file I/O, and error handling.
 
-By utilizing ft_libft in your projects, you can focus on the higher-level logic and algorithmic aspects, knowing that the basic functionality is already implemented reliably. Additionally, using your own library instead of relying solely on standard library functions allows you to have greater control and customization in your code.
+*By utilizing ft_libft in your projects, you can focus on the higher-level logic and algorithmic aspects, knowing that the basic functionality is already implemented reliably. Additionally, using your own library instead of relying solely on standard library functions allows you to have greater control and customization in your code.*
 
 **Note:** This library was developed as part of the 42 school curriculum and is intended for educational purposes. While it aims to provide comprehensive functionality, it is not meant to be a direct replacement for the standard C library.
